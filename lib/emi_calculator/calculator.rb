@@ -19,7 +19,7 @@ module EmiCalculator
 
       return 0 if r.zero?
 
-      p * r * ((1+r)**n) / *((1+r)**n - 1)
+      p * r * ((1+r)**n) / ((1+r)**n - 1)
     end
 
     def total_payment
