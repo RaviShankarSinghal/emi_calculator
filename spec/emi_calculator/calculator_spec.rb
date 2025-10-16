@@ -62,7 +62,6 @@ RSpec.describe EmiCalculator::Calculator do
   describe '#amortization_schedule' do
     it "returns correct amortization schedule" do
       # Manually Calculated
-      puts calc.amortization_schedule
       expect(calc.amortization_schedule.count).to eq(12)
     end
 
