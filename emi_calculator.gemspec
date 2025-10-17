@@ -6,11 +6,12 @@ Gem::Specification.new do |spec|
   spec.name = "emi_calculator"
   spec.version = EmiCalculator::VERSION
   spec.authors = ["Ravi Shankar Singhal"]
-  spec.email = ["raviforjob2022@gmail.com"]
+  spec.email = ["ravi.singhal2308@gmail.com"]
 
   spec.summary = "A simple Ruby gem to calculate loan EMI (Equated Monthly Installment)."
   spec.description = "This gem provides methods to calculate EMI, total interest, and total payment amount for a given loan principal, interest rate, and tenure."
   spec.homepage = "https://github.com/RaviShankarSinghal/emi_calculator"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   #spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
