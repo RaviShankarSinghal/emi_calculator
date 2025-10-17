@@ -1,31 +1,138 @@
-# EmiCalculator
+# 💰 EmiCalculator
 
-TODO: Delete this and the text below, and describe your gem
+A lightweight Ruby gem for calculating **Loan EMIs**, **Total Interest**, and **Amortization Schedules** with ease.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/emi_calculator`. To experiment with that code, run `bin/console` for an interactive prompt.
+---
 
-## Installation
+## 🚀 Features
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+- 🧮 Calculate monthly EMI (Equated Monthly Installment)
+- 💵 Get total payment and total interest
+- 📅 Generate detailed amortization schedules
+- 🧑‍💻 Easy to integrate with Rails or standalone Ruby projects
+- ✅ Tested with RSpec
 
-Install the gem and add to the application's Gemfile by executing:
+---
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+## 📦 Installation
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+Add this line to your application's Gemfile:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+gem 'emi_calculator'
+Then execute
 
-## Usage
+$ bundle install
 
-TODO: Write usage instructions here
+Or Install Directly
 
-## Development
+$ gem install emi_calculator
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+require 'emi_calculator'
 
-## Contributing
+calculator = EmiCalculator::Calculator.new(
+  principal: 500_000,      # Loan amount
+  annual_rate: 10,         # Annual interest rate (in %)
+  tenure_months: 60        # Loan period in months
+)
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/emi_calculator.
+calculator.emi
+# => 10624.45
+
+
+calculator.total_payment
+# => 637467.0
+
+calculator.total_interest
+# => 137467.0
+
+
+schedule = calculator.amortization_schedule
+
+schedule.first(3)
+# => [
+#   {:month=>1, :emi=>10624.45, :interest=>4166.67, :principal=>6457.78, :balance=>493542.22},
+#   {:month=>2, :emi=>10624.45, :interest=>4112.85, :principal=>6511.60, :balance=>487030.62},
+#   {:month=>3, :emi=>10624.45, :interest=>4058.59, :principal=>6565.86, :balance=>480464.76}
+# ]
+
+
+$ bundle install
+$ rspec
+
+
+🧰 Development
+
+Run the following to set up your local environment:
+
+$ bin/setup
+
+
+You can open an interactive console with:
+
+$ bin/console
+
+
+To install this gem locally:
+
+$ bundle exec rake install
+
+
+To release a new version:
+
+$ bundle exec rake release
+
+
+This will:
+
+Build the .gem file
+
+Create a new Git tag
+
+Push commits and the tag
+
+Publish the gem to RubyGems.org
+
+📘 Example Project
+# example.rb
+require 'emi_calculator'
+
+loan = EmiCalculator::Calculator.new(
+  principal: 250000,
+  annual_rate: 8.5,
+  tenure_months: 36
+)
+
+puts "Monthly EMI: ₹#{loan.emi}"
+puts "Total Payment: ₹#{loan.total_payment}"
+puts "Total Interest: ₹#{loan.total_interest}"
+
+🤝 Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/<your-username>/emi_calculator
+.
+
+Fork it
+
+Create your feature branch (git checkout -b my-new-feature)
+
+Commit your changes (git commit -am 'Add new feature')
+
+Push to the branch (git push origin my-new-feature)
+
+Create a new Pull Request
+
+🧑‍💼 Author
+
+Ravi Shankar Singhal
+Senior Backend Developer — Ruby on Rails
+📧 ravi.singhal2308@gmail.com
+
+🌐 https://github.com/RaviShankarSinghal
+
+🪪 License
+
+The gem is available as open source under the terms of the MIT License
+.
+---
