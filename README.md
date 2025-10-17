@@ -20,15 +20,18 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'emi_calculator'
+```
 Then execute
-
+```ruby
 $ bundle install
+```
 
 Or Install Directly
-
+```ruby
 $ gem install emi_calculator
-
-
+```
+## 🧮 Usage
+```ruby
 require 'emi_calculator'
 
 calculator = EmiCalculator::Calculator.new(
@@ -57,32 +60,29 @@ schedule.first(3)
 #   {:month=>3, :emi=>10624.45, :interest=>4058.59, :principal=>6565.86, :balance=>480464.76}
 # ]
 
+```
 
-$ bundle install
-$ rspec
-
-
-🧰 Development
+## 🧰 Development
 
 Run the following to set up your local environment:
-
+```ruby
 $ bin/setup
-
+```
 
 You can open an interactive console with:
-
+```ruby
 $ bin/console
-
+```
 
 To install this gem locally:
-
+```ruby
 $ bundle exec rake install
-
+```
 
 To release a new version:
-
+```ruby
 $ bundle exec rake release
-
+```
 
 This will:
 
@@ -94,8 +94,8 @@ Push commits and the tag
 
 Publish the gem to RubyGems.org
 
-📘 Example Project
-# example.rb
+## 📘 Example Project
+```ruby
 require 'emi_calculator'
 
 loan = EmiCalculator::Calculator.new(
@@ -107,14 +107,14 @@ loan = EmiCalculator::Calculator.new(
 puts "Monthly EMI: ₹#{loan.emi}"
 puts "Total Payment: ₹#{loan.total_payment}"
 puts "Total Interest: ₹#{loan.total_interest}"
-
-🤝 Contributing
+```
+## 🤝 Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/<your-username>/emi_calculator
 .
 
 Fork it
-
+```
 Create your feature branch (git checkout -b my-new-feature)
 
 Commit your changes (git commit -am 'Add new feature')
@@ -122,16 +122,16 @@ Commit your changes (git commit -am 'Add new feature')
 Push to the branch (git push origin my-new-feature)
 
 Create a new Pull Request
-
-🧑‍💼 Author
-
+```
+## 🧑‍💼 Author
+```
 Ravi Shankar Singhal
 Senior Backend Developer — Ruby on Rails
 📧 ravi.singhal2308@gmail.com
 
 🌐 https://github.com/RaviShankarSinghal
-
-🪪 License
+```
+## 🪪 License
 
 The gem is available as open source under the terms of the MIT License
 .
